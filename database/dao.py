@@ -9,7 +9,7 @@ class DAO:
         Implementare tutte le funzioni necessarie a interrogare il database.
         """
 
-    staticmethod
+    @staticmethod
     def get_filiali(self):
 
         cnx=DBConnect.get_connection()
@@ -34,8 +34,8 @@ class DAO:
              return result
 
         finally:
-        cursor.close()
-        cnx.close()
+         cursor.close()
+         cnx.close()
 
 
 
