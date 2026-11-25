@@ -9,15 +9,13 @@ class DAO:
         Implementare tutte le funzioni necessarie a interrogare il database.
         """
 
-
+    staticmethod
     def get_filiali(self):
 
-        @staticmethod
+        cnx=DBConnect.get_connection()
+        result=[]
 
-         cnx=DBConnect.get_connection()
-         result=[]
-
-         if cnx is  None:
+        if cnx is  None:
             print('database non trovato')
 
             return None
