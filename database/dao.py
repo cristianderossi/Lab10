@@ -1,4 +1,3 @@
-from unittest import result
 
 from database.DB_connect import DBConnect
 from model.filiale import Filiale
@@ -38,7 +37,7 @@ class DAO:
          cnx.close()
 
     @staticmethod
-    def get_filiale_edges(self):
+    def get_filiale_edges():
         #'importo medio dei bonifici effettuati in un collegamento:
         # ciò significa sommare l'importo (campo importo della tabella bonifico)
         # di tutti i bonifici tra due filiali, considerando sia la direzione A→B
