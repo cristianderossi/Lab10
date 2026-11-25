@@ -1,5 +1,7 @@
-from database.DB_connect import DBConnect
+from unittest import result
 
+from database.DB_connect import DBConnect
+from model.filiale import Filiale
 
 
 class DAO:
@@ -8,7 +10,9 @@ class DAO:
         """
 
 
-     def get_filiali(self):
+    def get_filiali(self):
+
+        @staticmethod
 
          cnx=DBConnect.get_connection()
          result=[]
@@ -17,20 +21,27 @@ class DAO:
             print('database non trovato')
 
             return None
-         cursor = cnx.cursor()
 
-         try:
+        cursor = cnx.cursor(dictionary=True)
 
-             query = "select * from filiali"
+        try:
+
+             query = "select * from filiale"
 
              cursor.execute(query)
 
-             result=cursor.fetchall()
+             for row in cursor:
+                 result.append(Filiale.Filiale(**row))
+
              return result
 
-         finally:
-             cursor.close()
-             cnx.close()
+        finally:
+        cursor.close()
+        cnx.close()
+
+
+
+
 
 
 
