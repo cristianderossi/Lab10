@@ -14,6 +14,13 @@ class Model:
         """
         # TODO
 
+        self.G.clear()
+
+
+
+
+
+
     def get_num_edges(self):
         """
         Restituisce il numero di Collegamenti (edges) del grafo
@@ -42,6 +49,9 @@ class Model:
         :return: gli edges del grafo con gli attributi (il weight)
         """
         # TODO
+
+        return self.G.edges()
+
 
 
 
