@@ -21,6 +21,8 @@ class Model:
         """
         # TODO
 
+        return self.G.number_of_edges()
+
     def get_num_nodes(self):
         """
         Restituisce il numero di Filiali (nodi) del grafo
@@ -28,9 +30,18 @@ class Model:
         """
         # TODO
 
+        return self.G.number_of_nodes()
+
+
+
+
+
     def get_all_edges(self):
         """
         Restituisce tutti i Collegamenti (gli edges) con i corrispondenti pesi
         :return: gli edges del grafo con gli attributi (il weight)
         """
         # TODO
+
+
+
