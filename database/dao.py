@@ -31,7 +31,7 @@ class DAO:
              cursor.execute(query)
 
              for row in cursor:
-                 result.append(Filiale.Filiale(**row))
+                 result.append(Filiale(**row))
 
              return result
 
