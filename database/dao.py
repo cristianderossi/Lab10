@@ -9,8 +9,8 @@ class DAO:
         Implementare tutte le funzioni necessarie a interrogare il database.
         """
 
-
-    def get_filiali(self):
+    @staticmethod
+    def get_filiali():
 
         cnx=DBConnect.get_connection()
         result=[]
@@ -37,7 +37,7 @@ class DAO:
          cursor.close()
          cnx.close()
 
-
+    @staticmethod
     def get_filiale_edges(self):
         #'importo medio dei bonifici effettuati in un collegamento:
         # ciò significa sommare l'importo (campo importo della tabella bonifico)
@@ -66,7 +66,7 @@ class DAO:
 
             for row in cursor:
 
-                result.append(Filiale(**row))
+                result.append(row)
 
             return result
 
