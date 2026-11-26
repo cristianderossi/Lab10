@@ -24,6 +24,28 @@ class Model:
         self.G.add_nodes_from(self._nodes)
 
 
+        id_map={f.id:f  for f in self._nodes}
+
+        self._edges=DAO.get_filiale_edges()
+
+        for row in self._edges:
+
+            media=float(row['media'])
+
+            if media >= threshold:
+                f1=id_map[row['id_f1']]
+                f2=id_map[row['id_f2']]
+                self.G.add_edge(f1,f2,weight=media)
+
+
+
+
+
+
+
+
+
+
 
 
 
