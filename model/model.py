@@ -38,34 +38,6 @@ class Model:
                 self.G.add_edge(f1,f2,weight=media)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     def get_num_edges(self):
         """
         Restituisce il numero di Collegamenti (edges) del grafo
