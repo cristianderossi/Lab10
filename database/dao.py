@@ -55,13 +55,15 @@ class DAO:
         cursor=cnx.cursor(dictionary=True)
 
         try:
-            query =  """SELECT AVG(importo) as media ,b.id_filiale_origine ,b.id_filiale_destinazione
+            query =  """SELECT AVG(b.importo) as media ,Least(b.id_filiale_origine ,b.id_filiale_destinazione) as id_f1
+                      Greatest(b.id_filiale_origine ,b.id_filiale_destinazione) as id_f2
                      from bonifico b
                      where b.id_filiale_origine != b.id_filiale_destinazione
-                     Group By b.id_filiale_destinazione ,b.id_filiale_origine"""
+                     Group By id_f1, id_f2"""
 
 
             cursor.execute(query)
+
 
             for row in cursor:
 
