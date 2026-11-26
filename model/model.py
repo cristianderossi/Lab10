@@ -17,11 +17,16 @@ class Model:
         if self.G is None:
             self.G= nx.Graph()
 
-        if self.G.number_of_nodes() >0:
-            return
+        self.G.clear()
 
-        for n in self.G.nodes():
-            self.G.add_node(n)
+
+        self._nodes=DAO.get_filiali()
+        self.G.add_nodes_from(self._nodes)
+
+
+
+
+
 
 
 
