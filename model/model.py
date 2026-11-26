@@ -58,8 +58,6 @@ class Model:
 
 
 
-
-
     def get_all_edges(self):
         """
         Restituisce tutti i Collegamenti (gli edges) con i corrispondenti pesi
@@ -68,7 +66,5 @@ class Model:
         # TODO
 
         return self.G.edges()
-
-
 
 
