@@ -14,7 +14,25 @@ class Model:
         """
         # TODO
 
-        self.G.clear()
+        if self.G is None:
+            self.G= nx.Graph()
+
+        if self.G.number_of_nodes() >0:
+            return
+
+        for n in self.G.nodes():
+            self.G.add_node(n)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
